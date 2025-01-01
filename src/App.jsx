@@ -142,7 +142,8 @@ const App = () => {
   
   // Fetch image via proxy
   const fetchProxiedImage = async (url) => {
-    const proxyUrl = `http://localhost:9090/proxy?url=${encodeURIComponent(url)}`;
+    // const proxyUrl = `http://localhost:9090/proxy?url=${encodeURIComponent(url)}`;
+    const proxyUrl = `https://klotze.onrender.com/proxy?url=${encodeURIComponent(url)}`;
     const response = await fetch(proxyUrl);
     if (!response.ok) {
       throw new Error("Failed to fetch proxied image");
