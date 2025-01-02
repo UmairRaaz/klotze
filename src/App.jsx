@@ -143,7 +143,7 @@ const App = () => {
   // Fetch image via proxy
   const fetchProxiedImage = async (url) => {
     // const proxyUrl = `http://localhost:9090/proxy?url=${encodeURIComponent(url)}`;
-    const proxyUrl = `https://klotze.onrender.com/proxy?url=${encodeURIComponent(url)}`;
+    const proxyUrl = `https://klotze-1.onrender.com/proxy?url=${encodeURIComponent(url)}`;
     const response = await fetch(proxyUrl);
     if (!response.ok) {
       throw new Error("Failed to fetch proxied image");
@@ -167,7 +167,7 @@ const App = () => {
       const { imageSrc, pTexts } = result;
       
       const response = await axios.post(
-        'https://klotze.onrender.com/generate-video',
+        'https://klotze-1.onrender.com/generate-video',
         { imageSrc:dataURL, pTexts },
         { 
           responseType: 'blob',
@@ -204,7 +204,7 @@ const App = () => {
     try {
       const response = await axios.post(
         // "https://klotzecheck.onrender.com/extract",
-        "https://klotze.onrender.com/extract",
+        "https://klotze-1.onrender.com/extract",
         // "https://video-visz.onrender.com/extract",
         { url },
         {
